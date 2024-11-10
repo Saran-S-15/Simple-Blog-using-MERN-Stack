@@ -12,7 +12,7 @@ const { UserRegisterModel } = require("./models/UserRegister");
 
 
 const app = express();
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: "https://blog-deployment-client.onrender.com" }));
 app.use(express.json());
 
 function authenticate(req, res, next) {
