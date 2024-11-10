@@ -1,0 +1,18 @@
+.login{
+    background-image: url("../../assets/login.avif");
+    width: 100%;
+    min-height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.loginform{
+    max-width: 500px;
+    width: 100%;
+    background-color: whitesmoke;
+    padding: 15px;
+    border-radius: 10px;
+    min-height: auto;
+    transition: all 0.2s ease-in-out;
+}
