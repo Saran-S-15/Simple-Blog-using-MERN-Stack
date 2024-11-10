@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const { connectDB } = require("./db/connectDB");
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const dotenv = require("dotenv");
 dotenv.config();
 const PORT = process.env.PORT || 5001;
