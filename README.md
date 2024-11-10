@@ -96,5 +96,3 @@ This is a full-stack MERN blog application that allows users to create, edit, vi
 2. **Create a Blog**: Use the "Create Blog" form to add a new blog. It will be displayed on the homepage and saved to the database.
 3. **Edit or Delete Blogs**: Each blog has options for editing or deleting. Click "Edit" to modify a blog, or "Delete" to remove it.
 ---
-
-Feel free to replace `your-username` with your GitHub username or make other customizations as needed. This README should provide clear and professional documentation for your project!
