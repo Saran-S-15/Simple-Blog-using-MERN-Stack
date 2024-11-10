@@ -5,6 +5,7 @@ import { useFormik } from 'formik';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import "./Register.css";
+import { BASE_URL } from '../URL/Config';
 
 function Register() {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ function Register() {
     },
     onSubmit: async values => {
       try {
-        await axios.post("http://localhost:4000/register", values);
+        await axios.post(`${BASE_URL}/register`, values);
         formik.resetForm();
         navigate("/");
       } catch (error) {

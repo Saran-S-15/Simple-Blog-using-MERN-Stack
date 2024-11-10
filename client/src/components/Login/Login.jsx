@@ -5,6 +5,7 @@ import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import "./Login.css";
+import { BASE_URL } from '../URL/Config';
 
 function Login() {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ function Login() {
     },
     onSubmit: async values => {
       try {
-        const logindata = await axios.post("http://localhost:4000/login", values);
+        const logindata = await axios.post(`${BASE_URL}/login`, values);
         window.localStorage.setItem("myapp", logindata.data.token)
         navigate("/web/home");
       } catch (error) {

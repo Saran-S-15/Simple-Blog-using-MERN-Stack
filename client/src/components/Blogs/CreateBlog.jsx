@@ -6,6 +6,8 @@ import { useFormik } from 'formik';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import "./createBlog.css";
+import { BASE_URL } from '../URL/Config';
+
 
 function CreateBlog() {
     const navigate = useNavigate();
@@ -18,7 +20,7 @@ function CreateBlog() {
         if (id) {
             const fetchEdit = async () => {
                 try {
-                    const blog = await axios.get(`http://localhost:4000/blogId/${id}`,{
+                    const blog = await axios.get(`${BASE_URL}/blogId/${id}`,{
                         headers: {
                             "Authorization" : window.localStorage.getItem("myapp")
                         }
@@ -61,7 +63,7 @@ function CreateBlog() {
                 navigate("/web/Home");
                 formik.resetForm();
                 if (id) {
-                    await axios.put(`http://localhost:4000/editBlog/${id}`, values,{
+                    await axios.put(`${BASE_URL}/editBlog/${id}`, values,{
                         headers: {
                             "Authorization" : window.localStorage.getItem("myapp")
                         }
@@ -69,7 +71,7 @@ function CreateBlog() {
                     navigate(`/web/blog/${id}`)
                 }
                 else {
-                    const response = await axios.post("http://localhost:4000/blog", values,{
+                    const response = await axios.post(`${BASE_URL}/blog`, values,{
                         headers: {
                             "Authorization" : window.localStorage.getItem("myapp")
                         }

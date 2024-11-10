@@ -5,14 +5,15 @@ import "./Blog.css";
 import DeleteIcon from '@mui/icons-material/Delete';
 import Button from '@mui/material/Button';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
-
+import { BASE_URL } from '../URL/Config';
 
 function Blog() {
+
     const { id } = useParams();
     const navigate = useNavigate();
     const [blogs, setBlogs] = useState(null);
     const getBlogs = async () => {
-        const blog = await axios.get(`http://localhost:4000/blogId/${id}`, {
+        const blog = await axios.get(`${BASE_URL}/blogId/${id}`, {
             headers: {
                 "Authorization" : window.localStorage.getItem("myapp")
             }
@@ -25,7 +26,7 @@ function Blog() {
 
     const deleteBlog = async () => {
         try {
-            await axios.delete(`http://localhost:4000/deleteBlog/${id}`,{
+            await axios.delete(`${BASE_URL}/deleteBlog/${id}`,{
                 headers: {
                     "Authorization" : window.localStorage.getItem("myapp")
                 }

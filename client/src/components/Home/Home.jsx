@@ -2,13 +2,14 @@ import "./Home.css";
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { BASE_URL } from "../URL/Config";
 
 function Home() {
     const navigate = useNavigate();
     const [blogs, setBlogs] = useState([]);
 
     const fetchBlogs = async () => {
-        const response = await axios.get("http://localhost:4000/blogs",{
+        const response = await axios.get(`${BASE_URL}/blogs`,{
             headers: {
                 "Authorization" : window.localStorage.getItem("myapp")
             }
